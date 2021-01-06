@@ -4,7 +4,7 @@
 
 CREATE TABLE "Food" (
     "Food_ID" int   NOT NULL,
-    "Brand" varchar   NOT NULL,
+    "Brand" varchar  NOT NULL,
     "Meal" varchar   NOT NULL,
     "Calories" int   NOT NULL,
     "Fat" int   NOT NULL,
@@ -18,8 +18,8 @@ CREATE TABLE "Food" (
 
 CREATE TABLE "Record" (
     "Record_ID" int   NOT NULL,
-    "Time" char(8)   NOT NULL,
-    "Meal_Time" str   NOT NULL,
+    "Time" char(16)   NOT NULL,
+    "Meal_Time" char(16)   NOT NULL,
     "Food_ID" int   NOT NULL,
     "User_ID" int   NOT NULL,
     CONSTRAINT "pk_Record" PRIMARY KEY (
