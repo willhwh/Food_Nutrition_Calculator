@@ -6,11 +6,11 @@ CREATE TABLE "Food" (
     "Food_ID" int   NOT NULL,
     "Brand" varchar  NOT NULL,
     "Meal" varchar   NOT NULL,
-    "Calories" int   NOT NULL,
-    "Fat" int   NOT NULL,
-    "Carbs" int   NOT NULL,
-    "Fiber" int   NOT NULL,
-    "Protein" int   NOT NULL,
+    "Calories" numeric   NOT NULL,
+    "Fat" numeric   NOT NULL,
+    "Carbs" numeric   NOT NULL,
+    "Fiber" numeric   NOT NULL,
+    "Protein" numeric   NOT NULL,
     CONSTRAINT "pk_Food" PRIMARY KEY (
         "Food_ID"
      )
@@ -43,4 +43,3 @@ REFERENCES "Food" ("Food_ID");
 
 ALTER TABLE "Record" ADD CONSTRAINT "fk_Record_User_ID" FOREIGN KEY("User_ID")
 REFERENCES "User" ("User_ID");
-
