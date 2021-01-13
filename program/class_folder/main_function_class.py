@@ -33,6 +33,16 @@ class main_function():
         self.session = session
         self.database_tables = database_tables
     
+    #show user's target intake
+    def user_information(self):
+        user_info = self.session.query(self.user_tb)
+        for user in user_info:
+            target_calories = user.Target_Calories
+            target_protein = user.Target_Protein
+            target_carbs = user.Target_Carbs
+            target_fat = user.Target_Fat
+        print(f'Your daily target intake nutritions are below:\nTarget Calories:\t{target_calories}\nTarget Protein:\t{target_protein}\nTarget Carbs:\t{target_carbs}\nTarget Fat:\t{target_fat}')
+
     #start the recording function
     def start_record(self):
         user_input = Inputs(self.web_url, self.driver, self.session, self.database_tables)

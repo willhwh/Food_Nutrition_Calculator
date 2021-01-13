@@ -13,6 +13,9 @@ def main():
     elif cmd == 'V':
         static.start_visualize()
         main()
+    elif cmd == 'U':
+        static.user_information()
+        main()
     elif cmd == 'Q':   
         print('Thanks for using this software.')
         pass

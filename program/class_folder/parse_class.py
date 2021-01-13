@@ -19,10 +19,3 @@ class Parse():
         user_tb = self.database_tables.User
         return food_tb, record_tb, user_tb
     
-    #create csv file for records
-    def create_file(self):
-        columns = ['Date', 'Meal_Time' , 'Brand', 'Food', 'Calories', 'Fat', 'Carbs', 'Fiber', 'Protein']
-        if os.path.isfile('food_recoder.csv') == False:
-            with open('record/food_recoder.csv', 'w', newline='') as csvfile:
-                writer = csv.writer(csvfile)
-                writer.writerow(columns)

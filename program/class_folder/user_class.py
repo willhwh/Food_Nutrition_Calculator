@@ -35,7 +35,7 @@ class User():
                                  Target_Fat = target_fat)
             self.session.add(user_input)
             self.session.commit()
-            
+
     #return the intake nutrition for a user assigned date
     def start_visualize(self):
         search_date = input('Please enter the date you are looking at. mm/dd/yyyy.\t')

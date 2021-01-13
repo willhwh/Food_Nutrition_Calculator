@@ -5,6 +5,7 @@
 
 ## Project Summary
 <hr>
+
 This project is a food nutritions recording program that parses food data from [CalorieKing](
 https://www.calorieking.com/us/en/) and stores the nutritions information into a postgreSQL database. Also, a user can query the database to see if a certain day meet the daily target intake nutritions.
 
@@ -47,29 +48,20 @@ Sample User Information:
 Sample User's Diet Records:
 <ul>
 Date: 01/13/2021
-    <li>Breakfast
+    <li>Breakfast: Subway Tuna Sub on 9-Grain Wheat Bread (6"), without dressing
     </li>
-    <li>Lunch
+    <li>Lunch: Popeye's Classic or Spicy Chicken Sandwich
     </li>
-    <li>Dinner
+    <li>Dinner: Applebee's Sirloin Steak (8 oz), without sides
     </li>
-    <li>Other
+    <li>Other: KFC Original Recipe Chicken Thigh, bone in
     </li>
-    <li>Other
+    <li>Other: Starbucks Matcha Green Tea Latte with Almond milk
     </li>
 </ul>
 
 Sample User's Daily Intaken Condition Visuals: 
 <ul>
 Date: 01/13/2021
-    <li>Breakfast
-    </li>
-    <li>Lunch
-    </li>
-    <li>Dinner
-    </li>
-    <li>Other
-    </li>
-    <li>Other
-    </li>
+
 </ul>

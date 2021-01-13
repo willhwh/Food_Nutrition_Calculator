@@ -47,8 +47,4 @@ class Food:
                                                 Meal_Time = self.meal_time_transfered,
                                                 Food_ID = food_id, User_ID = user_id)
         self.session.add(record_data)
-        self.session.commit()
-
-        with open('record/food_recoder.csv', 'a', newline='') as csvfile:
-            writer = csv.writer(csvfile)
-            writer.writerow([self.date, self.meal_time_transfered, self.target_brand, self.target_food, self.calories, self.fat, self.carbs, self.fiber, self.protein]) 
+        self.session.commit() 

@@ -82,7 +82,7 @@ class Inputs():
         foods = self.driver.find_elements_by_class_name('jss374')
         food_lst = [ i.text for i in foods]
         # check if contains wrong message
-        if 'If' in str(food_lst[0]):
+        if 'Food' in str(food_lst[0]):
             print('Please try another search tearms for meal.')
             self.get_key_word_checked()
         self.food_lst = food_lst

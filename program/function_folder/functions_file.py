@@ -40,7 +40,6 @@ def static():
     
     return web_url, driver, session, database_tables
 
-
 #back to main menu
 def back_to_menu():
     print('Back to Main Menu.')
@@ -53,6 +52,7 @@ def get_command():
     '''
     print("'A' => Add to Record")
     print("'V' => View Daily Intake")
+    print("'U  => View Daily Target Intake")
     print("'Q' => Quit")
     command = input("Enter command: ").upper()
     return command
