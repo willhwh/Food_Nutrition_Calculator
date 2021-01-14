@@ -63,7 +63,7 @@ A user can query the database to see if a certain day meet the daily target inta
     </li>
     <li>Type "python main.py" in the terminal to run the food_nutrition_calculator program.
     </li>
-    <li>Enter the letters to activate corrospoidng function.
+    <li>Enter the letters to activate corresponding  function.
     </li>
 </ol>
 
