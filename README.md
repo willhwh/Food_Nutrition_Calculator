@@ -15,7 +15,7 @@ A user can query the database to see if a certain day meet the daily target inta
 <li>Next, I used QuickDBD to create the schemea of the food database with 3 tables, including Food table, User table, and Record table.</li>
 <li>Next, I exported the schema as a SQL script.</li>
 <li>Next, I ran the SQL script in PgAdmin to create the talbes and the relationships.</li>
-<li>Lastly, I wrote the parsing, storing, and visulizing functions for the program with Python.</li>
+<li>Lastly, I used selenium to write the parsing, storing, and visulizing functions for the program with Python.</li>
 <li>At this point, a user can type in the resetaurant's name and the meal name to search for the nutritions of the meal. The program will store the data into database and provid the function of visualizing the daily target nutritions and daily intaken nutritions with pie plots.
 </li>
 </ol>
