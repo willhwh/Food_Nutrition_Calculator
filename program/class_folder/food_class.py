@@ -17,7 +17,7 @@ class Food:
     
     #show the recording meal info
     def show_info(self): 
-        meal_info = f'The meal contains \n{self.calories} kcal calories,\n{self.fat} g fat,\n{self.carbs} g carbs,\n{self.fiber} g fiber,\n{self.protein} g protein'
+        meal_info = f'The meal {self.target_brand} {self.target_food} contains \n{self.calories} kcal calories,\n{self.fat} g fat,\n{self.carbs} g carbs,\n{self.fiber} g fiber,\n{self.protein} g protein'
         print(meal_info)
     
     #save the record to RMDB

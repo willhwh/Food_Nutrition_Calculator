@@ -51,8 +51,8 @@ def get_command():
     Get command, upper-case it
     '''
     print("'A' => Add to Record")
+    print("'U  => View Target Intake")
     print("'V' => View Daily Intake")
-    print("'U  => View Daily Target Intake")
     print("'Q' => Quit")
     command = input("Enter command: ").upper()
     return command

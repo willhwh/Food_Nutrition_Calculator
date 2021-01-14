@@ -59,7 +59,9 @@ class Inputs():
                     target_brand = str(brand_candidate)
                     self.target_brand = target_brand
                     return target_brand
-                    
+                elif correct !="F":
+                    print('Please enter T or F. Try Again.')
+                    self.get_brand()
             except: 
                 print('Please try another search tearms for brand.')
                 self.get_key_word()
@@ -95,12 +97,12 @@ class Inputs():
             for i in self.food_lst:
                 yield(i)
         foods = check_food(self)
-        
         correct = 'F'
         while correct == 'F':
             try:
                 food_candidate = next(foods)
                 correct = input(f'If {food_candidate} the meal you are looking for? T/F:\t').upper()
+                
                 if correct =='T':
                     target_food = str(food_candidate)
                     url = self.driver.find_elements_by_class_name('MuiListItem-button')[count].get_attribute('href')
@@ -108,8 +110,16 @@ class Inputs():
                     self.target_food_url = target_food_url
                     self.target_food = target_food
                     return target_food_url, target_food
-                else:
+                elif correct =='F':
                     count=count+1
+                    if count == 5:
+                        print('Please try another search tearms for meal.')
+                        self.get_key_word_checked()
+                        self.get_food()
+                        return self.target_food_url, self.target_food
+                else:
+                    print('Please enter T or F. Try again.')
+                    self.get_food()
             except: 
                 print('Please try another search tearms for meal.')
                 self.get_key_word_checked()
