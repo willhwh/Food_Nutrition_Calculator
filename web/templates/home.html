@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+</head>
+<body>
+    <!--Header-->
+    <h1>Hi {{user}},<br> Welcome to the Nutrition Intaken Calculator</h1>
+
+    <!--User Information-->
+    <h3>Please Fill the Information Below.</h3>
+    <label>Please Enter Your Weight.</label><br>
+    <input id='weight' placeholder="KG"><br>
+    <label>Please Pick Your Acitivity Level.</label><br>
+    <label>A---Light. B---Mediumn. C---Heavy.</label><br>
+    <input id='activity_level' placeholder="(A, B, or C)"><br>
+    <label>Please Pick Your Diet Purpose.</label><br>
+    <label>A---Gain Weight. B---Keep Weight. C---Loss Weight.</label><br>
+    <input id="purpose" placeholder="(A, B, or C)"><br><br>
+    <button onclick=goal_calculate_trigger() type='submit'>Submit</button><hr>
+
+    <!--Goal-->
+    <h3>Your Daily Target Goal of Nutrition Intaken</h3>
+    <label>Target Calories.</label><br>
+    <input id="target_calories" readonly><br>
+    <label>Target Proteins.</label><br>
+    <input id="target_proteins" readonly><br>
+    <label>Target Fat.</label><br>
+    <input id="target_fat" readonly><br>
+    <label>Target Carbs.</label><br>
+    <input id="target_carbs" readonly><br><br>
+    <button type='Next'>Next</button>
+
+
+    <script type="text/javascript" src='../static/js/home.js'></script>
+</body>
+</html>
