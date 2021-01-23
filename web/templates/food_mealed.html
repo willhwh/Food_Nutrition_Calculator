@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Food Page</title>
+</head>
+<body>
+    <h1>Welcome to Food Page!</h1>
+
+    <h3>Please Fill the Information Below.</h3>
+    <input name = 'restaurant' id = 'restaurant' readonly>{{restaurant_name}}<br><br>
+    <hr>
+    <input name = 'meal' id = 'meal' readonly>{{meal_name}}<br><br>
+    <hr>
+    <form method ="POST"> <!--all the inputs should be put under form then can be passed-->
+        <h3>Nutrition Intaken</h3>
+        <label>Calories.</label><br>
+        <input name = "calories" id = "calories" readonly><br><br>
+        <label>Proteins.</label><br>
+        <input name = "proteins" id = "proteins" readonly><br><br>
+        <label>Fat.</label><br>
+        <input name = "fat" id = "fat" readonly><br><br>
+        <label>Carbs.</label><br>
+        <input name = "carbs" id = "carbs" readonly><br><br>
+        <button>Add to Database</button>
+        <button>Add Another Meal</button>
+        <button>View Charts</button>
+    </form>
+</body>
+</html>

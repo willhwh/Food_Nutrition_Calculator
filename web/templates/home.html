@@ -11,27 +11,44 @@
     <!--User Information-->
     <h3>Please Fill the Information Below.</h3>
     <label>Please Enter Your Weight.</label><br>
-    <input id='weight' placeholder="KG"><br>
-    <label>Please Pick Your Acitivity Level.</label><br>
-    <label>A---Light. B---Mediumn. C---Heavy.</label><br>
-    <input id='activity_level' placeholder="(A, B, or C)"><br>
-    <label>Please Pick Your Diet Purpose.</label><br>
-    <label>A---Gain Weight. B---Keep Weight. C---Loss Weight.</label><br>
-    <input id="purpose" placeholder="(A, B, or C)"><br><br>
-    <button onclick=goal_calculate_trigger() type='submit'>Submit</button><hr>
+    <input id='weight' placeholder="KG"><br><br>
+    <label>Please Select Your Acitivity Level.</label><br>
+    <select id= 'activity_level'>  
+        <option value = "Default"> Acitivity Level
+        </option>  
+        <option value = "A"> Light
+        </option>  
+        <option value = "B"> Medium
+        </option>  
+        <option value = "C"> Heavy  
+        </option>  
+    </select><br><br>
+    <label>Please Select Your Diet Purpose.</label><br>
+    <select id = 'purpose'>  
+        <option value = "Default"> Diet Purpose
+        </option>  
+        <option value = "A"> Gain Weight
+        </option>  
+        <option value = "B"> Keep Weight
+        </option>  
+        <option value = "C"> Loss Weight 
+        </option>  
+    </select><br><br>
+    <button onclick=goal_calculate_trigger()>Calculate</button><hr>
 
     <!--Goal-->
-    <h3>Your Daily Target Goal of Nutrition Intaken</h3>
-    <label>Target Calories.</label><br>
-    <input id="target_calories" readonly><br>
-    <label>Target Proteins.</label><br>
-    <input id="target_proteins" readonly><br>
-    <label>Target Fat.</label><br>
-    <input id="target_fat" readonly><br>
-    <label>Target Carbs.</label><br>
-    <input id="target_carbs" readonly><br><br>
-    <button type='Next'>Next</button>
-
+    <form method ="POST"> <!--all the inputs should be put under form then can be passed-->
+        <h3>Your Daily Target Goal of Nutrition Intaken</h3>
+        <label>Target Calories.</label><br>
+        <input name = "target_calories" id = "target_calories" readonly><br><br>
+        <label>Target Proteins.</label><br>
+        <input name = "target_proteins" id = "target_proteins" readonly><br><br>
+        <label>Target Fat.</label><br>
+        <input name = "target_fat" id = "target_fat" readonly><br><br>
+        <label>Target Carbs.</label><br>
+        <input name = "target_carbs" id = "target_carbs" readonly><br><br>
+        <button>Next</button>
+    </form>
 
     <script type="text/javascript" src='../static/js/home.js'></script>
 </body>

@@ -1,18 +1,10 @@
-const serverBaseURL = "http://127.0.0.1:5000";
-const nullLabel = "Unknown";
-
-
-
-
 function goal_calculate_trigger() {
-    
-    weight = document.getElementById("weight").value
-    activity_level = document.getElementById("activity_level").value.toUpperCase()
-    purpose = document.getElementById("purpose").value.toUpperCase()
-    check_string = ['A','B','C']
-    console.log(weight)
 
-    if (check_string.indexOf(activity_level) >= 0 && check_string.indexOf(purpose)>=0 && weight>0){
+    weight = document.getElementById("weight").value
+    activity_level = document.getElementById("activity_level").value
+    purpose = document.getElementById("purpose").value
+
+    if (activity_level !='Default' && purpose !='Default' && weight>0){
         target_calories = document.getElementById('target_calories')
         target_proteins = document.getElementById('target_proteins')
         target_fat = document.getElementById('target_fat')
@@ -26,17 +18,13 @@ function goal_calculate_trigger() {
         target_fat.value = Math.round(target_calories.value * 0.2/9)
         target_carbs.value = Math.round(target_calories.value * 0.5/4)
     }
-
-    else {
+    else{
         //document.getElementById('target_form').reset()
-        document.getElementById('weight').value=""
-        document.getElementById('activity_level').value =''
-        document.getElementById('purpose').value=''
-        window.alert('Please enter number for itme 1, and A, B, or C for item 2 and item 3. Try again, thanks.')
-
+        document.getElementById('weight').value = ''
+        document.getElementById('activity_level').value = 'Default'
+        document.getElementById('purpose').value = 'Default'
+        window.alert('Please enter integer for your weight and select options from the dropdown list. Try again, thanks.')
     }
-
-
 };
 
 
