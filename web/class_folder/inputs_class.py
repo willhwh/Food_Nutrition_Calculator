@@ -45,7 +45,29 @@ class Inputs():
         self.get_key_word(user_input_restaurant_name)
         return self.target_brand
     
-    
+    def get_key_word_checked(self,user_input_meal_name):
+        self.driver.get(self.web_url)
+        time.sleep(5)
+        meal_terms = user_input_meal_name
+        search_terms = str(self.target_brand) + ' ' + meal_terms
+        print(f'search for the terms: {search_terms}')
+        # search the key words
+        search_field = self.driver.find_element_by_id('keywords')
+        search_field.send_keys(search_terms)
+        search_field.send_keys(Keys.RETURN)
+        # get search terms results
+        foods = self.driver.find_elements_by_class_name('jss374')
+        food_lst = [ i.text for i in foods]
+        self.food_lst = food_lst
+        self.meal_terms = meal_terms
+        
+  
+
+    def get_meal_name(self,user_input_meal_name):
+        self.get_key_word_checked(user_input_meal_name)
+        foods = self.food_lst
+        return foods
+
     # #return the meal nutrition and time info
     # def get_inputs(self):
     #     self.get_key_word()

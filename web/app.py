@@ -1,8 +1,7 @@
 from flask import Flask, request, redirect, render_template, url_for
 from parse_realtive import static
 from class_folder.inputs_class import Inputs
-global web_url
-global driver
+
 
 
 app = Flask(__name__)
@@ -15,12 +14,18 @@ user = ''
 global restaurant
 restaurant = ''
 global restaurant_name
-restaurant_name =''
+restaurant_name = ''
+global meal_name
+meal_name = ''
+global select_meal
+select_meal = ''
+
 
 @app.route('/', methods=['GET', 'POST'])
 def user_page():
         if request.method == 'POST': 
             return redirect(url_for("login_page"))
+            
         else:
             return render_template("index.html")
 
@@ -50,15 +55,17 @@ def home_page(user):
 
 @app.route('/food',methods=['GET', 'POST'])
 def food_page():
+    if request.method == 'GET':
+        return render_template("food.html")
+
     if request.method == 'POST':
         restaurant = request.values['restaurant']
         web_url, driver = static()
+        global user_input
         user_input = Inputs(web_url,driver)
         restaurant_name = user_input.get_restaurant_name(restaurant)
         return redirect(url_for("food_brand_page",restaurant_name = restaurant_name))
 
-    if request.method == 'GET':
-        return render_template("food.html")
 
 @app.route('/food_brand/<restaurant_name>',methods=['GET', 'POST'])
 def food_brand_page(restaurant_name):
@@ -66,16 +73,57 @@ def food_brand_page(restaurant_name):
         return render_template("food_brand.html",restaurant_name = restaurant_name) 
 
     if request.method == 'POST':
-        return redirect(url_for("food_branded_page"))
+        check = request.values['check_tf']
+        if check == 'Yes':
+            print(restaurant_name)
+            select_restaurant = request.values['select_restaurant']
+            return redirect (url_for("food_branded_page",restaurant_name = select_restaurant))
+        else:
+            return redirect(url_for("food_page"))
 
-@app.route('/food_branded',methods=['GET', 'POST'])
-def food_branded_page():
-    return render_template("food_branded.html",restaurant_name=restaurant_name) 
-       
+@app.route('/food_branded/<restaurant_name>',methods=['GET', 'POST'])
+def food_branded_page(restaurant_name):
+    if request.method == 'GET':
+        return render_template("food_branded.html",restaurant_name=restaurant_name) 
+
+    if request.method == 'POST':
+        select_restaurant =  request.values['select_restaurant']
+        meal = request.values['meal']
+        global user_input
+        meal_names = user_input.get_meal_name(meal)
+        return redirect(url_for("food_meal_page",select_restaurant=select_restaurant,meal_names = meal_names))
+
+@app.route('/food_meal/<select_restaurant>/<meal_names>',methods=['GET', 'POST'])
+def food_meal_page(select_restaurant, meal_names):
+    if request.method == 'GET':
+        return render_template('food_meal.html',select_restaurant=select_restaurant,meal_names = meal_names)
+    
+    if request.method == 'POST':
+        select_meal = request.values['select_meal']
+        select_restaurant =  request.values['select_restaurant']
+        print(select_meal)
+        print(select_restaurant)
+        #add parse the food info here!!!
+        return render_template('food_mealed.html',select_restaurant=select_restaurant,select_meal = select_meal)
+
+@app.route('/food_mealed/<select_restaurant>/<select_meal>',methods=['GET', 'POST'])
+def food_mealed_page(select_restaurant,select_meal):
+    if request.method == 'GET':
+        print(select_restaurant)
+        print(select_meal)
+        return render_template('food_mealed.html',select_restaurant=select_restaurant, select_meal = select_meal)
+    
+   
+   
+
+
+
 
 @app.route('/charts',methods=['GET', 'POST'])
 def chart_page():
     return render_template("chart.html")
+
+
 
 
 

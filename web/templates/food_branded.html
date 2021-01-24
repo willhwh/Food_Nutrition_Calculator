@@ -8,19 +8,13 @@
     <h1>Welcome to Food Page!</h1>
 
     <h3>Please Fill the Information Below.</h3>
-    <input name = 'restaurant' id = 'restaurant' readonly>{{restaurant_name}}<br><br>
-    <hr>
-    <label>Please Enter the Meal Name.</label><br>
-    <input name = 'meal' id = 'meal' placeholder = "Meal Name"><br><br>
-    <select id= 'meal_list'>  
-        <option value = "Default"> Pick Meal Name
-        </option>  
-        {% for meal_name in meal_list %}
-            <option> {{meal_name}}
-            </option>  
-        {% endfor %}
-    </select><br><br>
-    <button type="button">Add Meal</button>
+    <form method = 'post'>
+        <label>Selected Restaurant:</label><br>
+        <input name='select_restaurant' value= {{restaurant_name}} readonly><hr>
+        <label>Please Enter the Meal Name.</label><br>
+        <input name = 'meal' id = 'meal' placeholder = "Meal Name"><br><br>
+        <button type="submit">Add Meal</button>
+        <hr>
     </form>
 </body>
 </html>

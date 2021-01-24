@@ -8,9 +8,9 @@
     <h1>Welcome to Food Page!</h1>
 
     <h3>Please Fill the Information Below.</h3>
-    <input name = 'restaurant' id = 'restaurant' readonly>{{restaurant_name}}<br><br>
+    <input name = 'select_restaurant' id = 'select_restaurant' value = {{select_restaurant}} readonly><br><br>
     <hr>
-    <input name = 'meal' id = 'meal' readonly>{{meal_name}}<br><br>
+    <input name = 'select_meal' id = 'select_meal'readonly value = "{{select_meal|string}}"><br><br>
     <hr>
     <form method ="POST"> <!--all the inputs should be put under form then can be passed-->
         <h3>Nutrition Intaken</h3>
@@ -26,5 +26,7 @@
         <button>Add Another Meal</button>
         <button>View Charts</button>
     </form>
+
+    <script src='../static/js/check.js'></script>
 </body>
 </html>
