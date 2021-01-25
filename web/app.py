@@ -103,17 +103,23 @@ def food_meal_page(select_restaurant, meal_names):
         select_restaurant =  request.values['select_restaurant']
         print(select_meal)
         print(select_restaurant)
-        #add parse the food info here!!!
-        return render_template('food_mealed.html',select_restaurant=select_restaurant,select_meal = select_meal)
+        global user_input
+        calories, fat, carbs, proteins = user_input.get_meal_info(select_restaurant,select_meal)
 
-@app.route('/food_mealed/<select_restaurant>/<select_meal>',methods=['GET', 'POST'])
-def food_mealed_page(select_restaurant,select_meal):
+        return redirect(url_for('food_mealed_page',select_restaurant=select_restaurant,select_meal = select_meal,\
+            calories=calories, fat=fat, carbs=carbs, proteins=proteins))
+
+@app.route('/food_mealed/<select_restaurant>/<select_meal>/<calories>/<fat>/<carbs>/<proteins>',methods=['GET', 'POST'])
+def food_mealed_page(select_restaurant,select_meal,calories,fat,carbs,proteins):
     if request.method == 'GET':
         print(select_restaurant)
         print(select_meal)
-        return render_template('food_mealed.html',select_restaurant=select_restaurant, select_meal = select_meal)
+        return render_template('food_mealed.html',select_restaurant=select_restaurant,select_meal = select_meal,\
+            calories=calories, fat=fat, carbs=carbs, proteins=proteins)
     
-   
+    if request.method == 'POST':
+       print("Back to Food_Page")
+       return redirect(url_for('food_page'))
    
 
 

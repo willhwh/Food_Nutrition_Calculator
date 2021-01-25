@@ -11,7 +11,7 @@
     <!--User Information-->
     <h3>Please Fill the Information Below.</h3>
     <label>Please Enter Your Weight.</label><br>
-    <input id='weight' placeholder="KG"><br><br>
+    <input id='weight' placeholder="KG" autofocus>kg<br><br>
     <label>Please Select Your Acitivity Level.</label><br>
     <select id= 'activity_level'>  
         <option value = "Default"> Acitivity Level
@@ -40,14 +40,14 @@
     <form method ="POST"> <!--all the inputs should be put under form then can be passed-->
         <h3>Your Daily Target Goal of Nutrition Intaken</h3>
         <label>Target Calories.</label><br>
-        <input name = "target_calories" id = "target_calories" readonly><br><br>
+        <input name = "target_calories" id = "target_calories" readonly>kal<br><br>
         <label>Target Proteins.</label><br>
-        <input name = "target_proteins" id = "target_proteins" readonly><br><br>
+        <input name = "target_proteins" id = "target_proteins" readonly>g<br><br>
         <label>Target Fat.</label><br>
-        <input name = "target_fat" id = "target_fat" readonly><br><br>
+        <input name = "target_fat" id = "target_fat" readonly>g<br><br>
         <label>Target Carbs.</label><br>
-        <input name = "target_carbs" id = "target_carbs" readonly><br><br>
-        <button>Next</button>
+        <input name = "target_carbs" id = "target_carbs" readonly>g<br><br>
+        <button id='next'>Next</button>
     </form>
 
     <script type="text/javascript" src='../static/js/home.js'></script>

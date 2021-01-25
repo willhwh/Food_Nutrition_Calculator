@@ -17,10 +17,12 @@ function goal_calculate_trigger() {
         target_proteins.value = Math.round(target_calories.value * 0.3/4)
         target_fat.value = Math.round(target_calories.value * 0.2/9)
         target_carbs.value = Math.round(target_calories.value * 0.5/4)
+        document.getElementById("next").focus();
     }
     else{
         //document.getElementById('target_form').reset()
         document.getElementById('weight').value = ''
+        document.getElementById("weight").focus();
         document.getElementById('activity_level').value = 'Default'
         document.getElementById('purpose').value = 'Default'
         window.alert('Please enter integer for your weight and select options from the dropdown list. Try again, thanks.')

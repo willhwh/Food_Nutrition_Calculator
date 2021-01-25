@@ -68,6 +68,32 @@ class Inputs():
         foods = self.food_lst
         return foods
 
+    def get_meal_info(self, user_input_restaurant_name, user_input_meal_name):
+        search_terms = user_input_restaurant_name + ' ' + user_input_meal_name
+        print(f'search for the terms: {search_terms}')
+        search_field = self.driver.find_element_by_id('keywords')
+        search_field.send_keys(search_terms)
+        search_field.send_keys(Keys.RETURN)
+        url = self.driver.find_elements_by_class_name('MuiListItem-button')[0].get_attribute('href')
+        self.driver.get(url)
+        infos = self.driver.find_element_by_class_name('jss374')
+        infos = infos.text.split('\n')
+        
+        calories = infos[0].split(' ')[0]
+        fat = infos[6].split(' ')[0]
+        carbs = infos[8].split(' ')[0]
+        fiber = infos[10].split(' ')[0]
+        protein = infos[12].split(' ')[0]
+        
+        self.calories = calories
+        self.fat = fat
+        self.carbs = carbs
+        self.fiber = fiber
+        self.protein = protein
+
+        return self.calories, self.fat, self.carbs, self.protein
+    
+
     # #return the meal nutrition and time info
     # def get_inputs(self):
     #     self.get_key_word()

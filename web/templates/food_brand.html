@@ -8,7 +8,7 @@
     <h1>Welcome to Food Page!</h1>
     <h3>Please Fill the Information Below.</h3>
     <label>Is <input id = 'check_restaurant' value ={{restaurant_name}}> the One You Are Looking For?</label><br>
-    <select id='tf'>  
+    <select id='tf' autofocus>  
         <option value = "Default"> Yes/No
         </option>  
         <option value='True'> Yes
@@ -18,7 +18,9 @@
     </select><br><br>
     <button onclick = "check()" type="button"> Confirm</button><br><hr>
     <form method = 'post'>
+        <label>Selected Restaurant:</label><br>
         <input name = 'select_restaurant'  id = 'select_restaurant' readonly><br><br>
+        <label>Confirmed:</label><br>
         <input name = 'check_tf'  id = 'check_tf' readonly><br><br>
         <button type="submit">Add Restaurant</button>
     </form>

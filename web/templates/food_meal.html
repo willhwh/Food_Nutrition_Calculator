@@ -8,14 +8,14 @@
     <h1>Welcome to Food Page!</h1>
     <h3>Please Fill the Information Below.</h3>
     <!--Need to deal with ' and "-->
-   
+    <!--Need to add yes and no return to meal term page"-->
     
 
     <form method = 'post'>
         <label>Selected Restaurant:</label><br>
         <input name='select_restaurant' value= {{select_restaurant}} readonly><hr>
         <label>Please confirm your meal.</label><br>
-        <select id='meal'> 
+        <select id='meal' autofocus> 
             <option value = 'Default'> Select Your Meal </option> 
             {% set list1 = meal_names.replace(',','').replace('[','').replace(']','').split("'") %}
             {% for meal_name in list1 %}
